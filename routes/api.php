@@ -17,8 +17,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('posts', 'PostController@index');
-Route::get('posts/{id}', 'PostController@show');
-Route::post('posts', 'PostController@store');
-Route::post('posts/update/{id}', 'PostController@update');
-Route::delete('posts/{id}', 'PostController@destroy');
+Route::group(['middleware' => ['apiKey']], function () {
+
+    Route::apiResource('posts','PostController')->except(['show','update']);
+});
