@@ -66,8 +66,8 @@ Laravel scores better than other web frameworks because of its advanced features
 
   
 - let's talk about the API how and how it's working:
-  - **ApiKey is: ``i9Ey9mlq7qcrCjHH8Rpe1U42OEWZeiuKOIuoHIiTr59GHJvYSvMYEDtRXwBs`` you will can't make calls without it.
-  - You should send the api key as parameter in request **headers**
+  - **ApiKey** is: ``i9Ey9mlq7qcrCjHH8Rpe1U42OEWZeiuKOIuoHIiTr59GHJvYSvMYEDtRXwBs`` you will can't make calls without it.
+  - You should send the api key as parameter key `api_token` in request **headers**
   - We have **three** api routes:
     - **_api/posts_** with ``GET`` method this will **get** all posts in our blog.
     - **_api/posts/{post_id}_** with ``GET`` this will **get** specific post based on the id.
