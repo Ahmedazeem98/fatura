@@ -29,9 +29,9 @@ Laravel scores better than other web frameworks because of its advanced features
 - create database such as **fatura**
 - Then go inside fatura folder and follow these steps
   - run **composer install**
-  - **rename** .env.example to .env and set database configs
-  - run **php artisan migrate**
-  - run **php artisan db:seed**
+  - **rename** .env.example to .env and set database configs.
+  - run **php artisan migrate** to generate db tables.
+  - run **php artisan db:seed** to insert the dummuy data for testing.
   - run php artisan serve to start the server and open the given link.<br><br>
 
 
