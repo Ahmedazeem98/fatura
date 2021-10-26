@@ -10,11 +10,16 @@ use App\helpers\SlugHelper;
 class PostController extends Controller
 {
     protected $paginateNumber = 15;
-    public function index()
+
+    public function index(Request $request)
     {
         $posts = Post::with('user')
-            ->orderBy('created_at','desc')
-            ->paginate($this->paginateNumber);
+            ->orderBy('created_at','desc');
+
+        if($request->query->has('user'))
+            $posts->where('user_id', $request->user);
+
+        $posts = $posts->paginate($this->paginateNumber);
 
         return view('blog.index', compact('posts'));
     }

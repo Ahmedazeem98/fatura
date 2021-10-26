@@ -20,7 +20,7 @@ class ApiKey
 
         if($token !== $apiKey)
         {
-            return response('Not allowed');
+            return response('Not allowed', 403);
         }
         return $next($request);
     }

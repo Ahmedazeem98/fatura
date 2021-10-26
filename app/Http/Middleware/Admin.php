@@ -17,7 +17,7 @@ class Admin
     public function handle($request, Closure $next)
     {
         if(!User::haveRoles(['admin']))
-            return response('not allowed');
+            return response('not allowed', 403);
         return $next($request);
     }
 }

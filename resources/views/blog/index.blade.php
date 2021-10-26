@@ -7,7 +7,7 @@
                 <article class="blog-post">
                     <h2 class="blog-post-title">{{$post->title}}</h2>
                     <p class="blog-post-meta">
-                        <b>{{$post->created_at->diffForHumans()}}</b> by <a href="#">{{$post->user->name}}</a>
+                        <b>{{$post->created_at->diffForHumans()}}</b> by <a href="{{route('blog.index').'?user='.$post->user_id}}">{{$post->user->name}}</a>
                     </p>
                     <p>{{$post->body}}</p>
 
