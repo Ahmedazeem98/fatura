@@ -1,13 +1,13 @@
 @include('layouts.includes.header')
-@include('layouts.includes.nav')
+    @include('layouts.includes.nav')
 
     <main class="py-4">
         <main class="container">
-            @include('frontend.messages.success')
-            @include('frontend.messages.error')
+            @include('messages.success')
+            @include('messages.error')
             @yield('content')
         </main>
     </main>
-
-@include('layouts.includes.footer')
-
+</div>
+</body>
+</html>

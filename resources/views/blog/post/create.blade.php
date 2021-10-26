@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form action="{{route('front.posts.store')}}" method="post">
+    <form action="{{route('posts.store')}}" method="post">
         @csrf
         <div class="form-group fw-bold">
             <label>Post title</label>

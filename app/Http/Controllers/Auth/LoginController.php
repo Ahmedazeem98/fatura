@@ -33,7 +33,7 @@ class LoginController extends Controller
         $credentials = $request->only('email', 'password');
 
         if (Auth::attempt($credentials, $remember)) {
-            return redirect()->route('front.blog.index')
+            return redirect()->route('blog.index')
                 ->withSuccess('Signed in');
         }
 

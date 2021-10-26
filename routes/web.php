@@ -16,13 +16,15 @@ Route::auth();
 Route::get('/logout', 'Auth\LoginController@logout');
 
 
-Route::group(['middleware' => ['auth'], 'namespace' => 'Frontend'], function (){
+Route::group(['middleware' => ['auth']], function (){
 
-    Route::get('/','PostController@index')->name('front.blog.index');
+    Route::get('/','PostController@index')->name('blog.index');
 
-    Route::name('front.')->group(function () {
         Route::resource('posts','PostController')->except(['show']);
-    });
-
 });
 
+// add middleware admin
+Route::group(['middleware' => ['auth', 'admin'],'prefix' => 'admin'], function (){
+
+    Route::resource('users','UserController')->except(['show','create','store']);
+});

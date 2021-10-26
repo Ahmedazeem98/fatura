@@ -2,12 +2,9 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\helpers\slugHelper;
 use App\Http\Resources\PostResource;
 use App\Post;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class PostController extends Controller
@@ -29,23 +26,6 @@ class PostController extends Controller
             return $this->apiResponse(new PostResource($post));
 
         return $this->notFoundResponse();
-    }
-
-    public function store(Request $request)
-    {
-        slugHelper::slugHandling($request);
-
-        $validate = $this->validator($request->all());
-        if($validate->fails())
-        {
-            return $this->apiResponse(null, $validate->errors(), 422);
-        }
-
-        $post = Post::create($request->all());
-        if($post)
-            return $this->apiResponse(new PostResource($post), null, 200);
-        else
-            return $this->apiResponse([], 'Post can\'t be created', 200);
     }
 
     public function destroy($post_id){

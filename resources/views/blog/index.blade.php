@@ -13,9 +13,9 @@
 
                         @if(Gate::forUser(auth()->user())->allows('isMyPost', $post))
                             <div class="btn-group btn-group-sm mb-4" role="group">
-                                <a class="btn btn-primary mr-2" href="{{route('front.posts.edit', ['post' => $post])}}" role="button">edit</a>
+                                <a class="btn btn-primary mr-2" href="{{route('posts.edit', ['post' => $post])}}" role="button">edit</a>
 
-                                {!! Form::open(['route' => ['front.posts.destroy','post' => $post->id], 'method' => 'delete']) !!}
+                                {!! Form::open(['route' => ['posts.destroy','post' => $post->id], 'method' => 'delete']) !!}
                                     {{ Form::button('Delete', ['type' => 'submit', 'class' => 'btn btn-danger btn-sm'] )  }}
                                 {!! Form::close() !!}
                             </div>
@@ -23,7 +23,7 @@
 
                 </article>
             @endforeach
-
+                <div class="d-flex justify-content-center">{{$posts->links()}}</div>
 
         </div>
 

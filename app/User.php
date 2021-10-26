@@ -45,7 +45,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
 
 
-    public function hasRoles($roles)
+    public static function haveRoles($roles)
     {
         if(!empty(auth()->user()->relations))
             return !empty(auth()->user()->relations['roles']->whereIn('name', $roles)->all());

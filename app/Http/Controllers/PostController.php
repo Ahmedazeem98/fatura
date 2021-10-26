@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Frontend;
+namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Post;
 use Illuminate\Http\Request;
-use App\helpers\slugHelper;
+use App\helpers\SlugHelper;
 
 class PostController extends Controller
 {
@@ -16,18 +16,18 @@ class PostController extends Controller
             ->orderBy('created_at','desc')
             ->paginate($this->paginateNumber);
 
-        return view('frontend.blog.index', compact('posts'));
+        return view('blog.index', compact('posts'));
     }
 
     public function create()
     {
         $this->authorize('create', Post::class);
-        return view('frontend.blog.post.create');
+        return view('blog.post.create');
     }
 
     public function store(Request $request)
     {
-        slugHelper::slugHandling($request);
+        SlugHelper::slugHandling($request);
 
         $this->validator($request);
         Post::create([
@@ -37,7 +37,7 @@ class PostController extends Controller
             'user_id' => $request->user_id,
         ]);
 
-        return redirect()->route('front.blog.index')
+        return redirect()->route('blog.index')
             ->with('success','Post added successfully');
     }
 
@@ -45,7 +45,7 @@ class PostController extends Controller
     {
         $post = Post::where('slug', $slug)->first();
         $this->authorize('edit', $post);
-        return view('frontend.blog.post.edit', compact('post'));
+        return view('blog.post.edit', compact('post'));
     }
 
     public function update(Request $request, $post_id)
@@ -53,11 +53,11 @@ class PostController extends Controller
         $post = Post::findOrFail($post_id);
         $this->authorize('update', $post);
 
-        slugHelper::slugHandling($request);
+        SlugHelper::slugHandling($request);
         $this->validator($request);
         $post->update($request->all());
 
-        return redirect()->route('front.blog.index')
+        return redirect()->route('blog.index')
             ->with('success','Post updated successfully');
     }
 
@@ -67,7 +67,7 @@ class PostController extends Controller
         $this->authorize('delete', $post);
         $post->delete();
 
-        return redirect()->route('front.blog.index')
+        return redirect()->route('blog.index')
             ->with('success','Post deleted successfully');
 
     }

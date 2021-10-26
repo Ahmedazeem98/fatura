@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class RegisterController extends Controller
 {
@@ -32,9 +33,10 @@ class RegisterController extends Controller
             'name' => $request->name,
             'email' =>$request->email,
             'password' => Hash::make($request->password),
+            'api_token' => Str::random(60),
         ]);
 
-        $user->roles()->sync(Role::UserRoleId());
-        return redirect()->route('login')->withSuccess('Thnaks for being here!');
+        $user->roles()->sync(Role::UserRoleId()->id);
+        return redirect()->route('login')->withSuccess('Thanks for being here!');
     }
 }

@@ -19,5 +19,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::group(['middleware' => ['apiKey']], function () {
 
-    Route::apiResource('posts','PostController')->except(['show','update']);
+    Route::apiResource('posts','PostController')->except(['update','store']);
 });

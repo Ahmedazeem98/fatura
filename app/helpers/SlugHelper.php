@@ -4,7 +4,7 @@ namespace App\helpers;
 
 use Illuminate\Support\Str;
 
-class slugHelper
+class SlugHelper
 {
     public static function slugHandling(&$request)
     {
