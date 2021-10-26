@@ -1,72 +1,75 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
-
 ## About Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Laravel scores better than other web frameworks because of its advanced features and development tools that facilitate rapid web application development.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+## Why Laravel
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- **MVC Architecture For Exceptional Support & Performance** <br>
+  - Laravel comes with the model-view-controller (MVC) architectural pattern. It is easy to use and thus offers an extremely convenient way to build large or small business applications. With it, web artisans can organize big projects with more than five files for improved maintainability.
+  - When you have to work on a large project, you have to deal with a lot of unstructured code. Using MVC can simplify your coding structure and make it easier for you to work with.
+- **Template Engine For Outstanding Layouts**
+  - Laravel comes with the Blade templating engine. It’s a powerful, lightweight, and pre-installed template engine that helps web developers make the process of development smooth and easy with its outstanding layouts.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+  - The Blade template engine allows data display and extending layouts without affecting the application's performance and speed. It helps you create innovative and amazing layouts using the feature of content seeding.
+- **Eloquent ORM For Easy Interaction With App Database**
+  - ORM stands for object-relational mapper, and Laravel’s Eloquent ORM is awesome. As the name suggests, it allows you to maintain an easy interaction with your app database objects using an eloquent or expressive syntax.
 
-## Laravel Sponsors
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## About the project
+  This is a very simple blog with authentication and authorization systems.<br>
+    It came with three main roles. ``admin`` ``author`` ``user``
+    that manage the actions that will done in the website .<br>
+    also it came with simple **RESTful API**.
+  
+## Steps to start working
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
+- clone the repo from [github](https://github.com/Ahmedazeem98/fatura.git)
+- create database such as **fatura**
+- Then go inside fatura folder and follow these steps
+  - run **composer install**
+  - **rename** .env.example to .env and set database configs
+  - run **php artisan migrate**
+  - run **php artisan db:seed**
+  - run php artisan serve to start the server and open the given link.<br><br>
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+- now you have three accounts with different roles
+  - We have three main roles: admin, author, user
+    - admin: can create edit delete any post or user
+    - author: can create posts and edit only his own posts
+    - user: can only read the blog posts
+  - Initially we have three accounts with password: ``pass123`` for test
+    - admin@admin.com
+    - author@author.com
+    - user@user.com <br><br>
+- The first thing to do you have to logged in with test accounts or create new account.
+- Then you can do every thing based on the account roles.<br><br>
 
-## Security Vulnerabilities
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- The registration system working by:
+  - Name
+  - Unique **Email**
+  - **Password** not less than 6 characters. <br><br>
+  - You have to know that `admin` can delete or edit the users accounts.
 
-## License
+- The login system working by:
+  - your **email** and **password** you registered with. <br><br>
 
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- Posting operations:
+  - You must have `admin` or `author` role so that you can create post.
+  - The post title is `unique`
+  - `admin` only can delete or edit any post.
+  - `author` only can create, edit and delete his own posts.
+  - `user` only read posts.
+
+  
+- let's talk about the API how and how it's working:
+  - **ApiKey is: ``i9Ey9mlq7qcrCjHH8Rpe1U42OEWZeiuKOIuoHIiTr59GHJvYSvMYEDtRXwBs`` you will can't make calls without it.
+  - You should send the api key as parameter in request **headers**
+  - We have **three** api routes:
+    - **_api/posts_** with ``GET`` method this will **get** all posts in our blog.
+    - **_api/posts/{post_id}_** with ``GET`` this will **get** specific post based on the id.
+    - **_api/posts/{post_id}_**  with ``DELETE`` this will **delete** specific post based on the id.<br><br>
+
