@@ -32,7 +32,7 @@ Laravel scores better than other web frameworks because of its advanced features
   - **rename** .env.example to .env and set database configs.
   - run **php artisan migrate** to generate db tables.
   - run **php artisan db:seed** to insert the dummuy data for testing.
-  - run php artisan serve to start the server and open the given link.<br><br>
+  - run **php artisan serve** to start the server and open the given link.<br><br>
 
 
 - now you have three accounts with different roles
